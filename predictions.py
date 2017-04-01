@@ -87,7 +87,7 @@ cv_sets = ShuffleSplit(X_train.shape[0], n_iter = 10, test_size = 0.20, random_s
 
 clf = RandomForestClassifier(random_state=15)
 f1_scorer = make_scorer(f1_score)
-parameters =  {'n_estimators': range(30,50), 'max_depth': range(10,20)}
+parameters =  {'n_estimators': range(30,40), 'max_depth': range(1,10)}
 grid_obj = GridSearchCV(clf, parameters, scoring=f1_scorer, cv=cv_sets)
 grid_obj.fit(X_train, y_train)
 
